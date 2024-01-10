@@ -18,68 +18,43 @@ public class firstPageUnhappyPath {
         driver.get("https://ta-bookrental-fe.onrender.com/login");
 
 //Try to register new user with already existing login and password - FAIL
-        //Click register button
+    //Click register button
         Thread.sleep(2000);
-        WebElement registerButton1 = driver.findElement(By.id("register-btn"));
-        registerButton1.click();
-
-        //Wait for page to reload
+        driver.findElement(By.id("register-btn")).click();
+    //Wait for page to reload
         Thread.sleep(5000);
-
-        //Input new user login in text box
-        WebElement newUserLogin = driver.findElement(By.id("login"));
-        newUserLogin.sendKeys("Testing");
+    //Input new user login in text box
+        driver.findElement(By.id("login")).sendKeys("Testing");
         Thread.sleep(2000);
-
-        //Input password for new user in text box
-        WebElement newUserPassword = driver.findElement(By.id("password"));
-        newUserPassword.sendKeys("12345");
+    //Input password for new user in text box
+        driver.findElement(By.id("password")).sendKeys("12345");
         Thread.sleep(2000);
-
-        //Input repeat password for new user in text box
-        WebElement newUserRepeatPassword = driver.findElement(By.id("password-repeat"));
-        newUserRepeatPassword.sendKeys("12345");
+    //Input repeat password for new user in text box
+        driver.findElement(By.id("password-repeat")).sendKeys("12345");
         Thread.sleep(2000);
-
-        //Click on register button
-        WebElement registerButton2 = driver.findElement(By.id("register-btn"));
-        registerButton2.click();
+    //Click on register button
+        driver.findElement(By.id("register-btn")).click();
         Thread.sleep(2000);
-
-        //Click login button after register
-        WebElement loginButton = driver.findElement(By.id("login-btn"));
-        loginButton.click();
+    //Click login button after register
+        driver.findElement(By.id("login-btn")).click();
         Thread.sleep(2000);
-
-        //Wait to create user and reload page after click login button
+    //Wait to create user and reload page after click login button
         Thread.sleep(5000);
-
 //Try to log in with wrong login - FAIL
-        WebElement wrongLogin = driver.findElement(By.xpath("/html/body/div/div/form/div[1]/label/input"));
-        wrongLogin.sendKeys("Andrzej");
+        driver.findElement(By.xpath("/html/body/div/div/form/div[1]/label/input")).sendKeys("Andrzej");
         Thread.sleep(2000);
-
-        WebElement password = driver.findElement(By.xpath("/html/body/div/div/form/div[2]/label/input"));
-        password.sendKeys("qwerty");
+        driver.findElement(By.xpath("/html/body/div/div/form/div[2]/label/input")).sendKeys("qwerty");
         Thread.sleep(2000);
-
-        WebElement loginButton2 = driver.findElement(By.xpath("/html/body/div/div/form/div[3]/button"));
-        loginButton2.click();
+        driver.findElement(By.xpath("/html/body/div/div/form/div[3]/button")).click();
         Thread.sleep(2000);
-
         driver.get("https://ta-bookrental-fe.onrender.com/login");
         Thread.sleep(5000);
 //Try to log in with wrong password data - FAIL
-        WebElement properLogin = driver.findElement(By.xpath("/html/body/div/div/form/div[1]/label/input"));
-        properLogin.sendKeys("Testing");
+        driver.findElement(By.xpath("/html/body/div/div/form/div[1]/label/input")).sendKeys("Testing");
         Thread.sleep(2000);
-
-        WebElement wrongPassword = driver.findElement(By.xpath("/html/body/div/div/form/div[2]/label/input"));
-        wrongPassword.sendKeys("qwerty");
+        driver.findElement(By.xpath("/html/body/div/div/form/div[2]/label/input")).sendKeys("qwerty");
         Thread.sleep(2000);
-
-        WebElement loginButton3 = driver.findElement(By.xpath("/html/body/div/div/form/div[3]/button"));
-        loginButton3.click();
+        driver.findElement(By.xpath("/html/body/div/div/form/div[3]/button")).click();
         Thread.sleep(2000);
     }
 }

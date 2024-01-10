@@ -17,36 +17,23 @@ public class fourthPageUnhappyPath {
         driver.get("https://ta-bookrental-fe.onrender.com/login");
 
 //Login with created user
-        //Input login into text box.
-        WebElement login = driver.findElement(By.xpath("/html/body/div/div/form/div[1]/label/input"));
-        login.sendKeys("Testing");
+    //Input login into text box.
+        driver.findElement(By.xpath("/html/body/div/div/form/div[1]/label/input")).sendKeys("Testing");
         Thread.sleep(2000);
-
-        //Input password into password text box.
-        WebElement password = driver.findElement(By.xpath("/html/body/div/div/form/div[2]/label/input"));
-        password.sendKeys("12345");
+    //Input password into password text box.
+        driver.findElement(By.xpath("/html/body/div/div/form/div[2]/label/input")).sendKeys("12345");
         Thread.sleep(2000);
-
-        //Submit with button input data.
-        WebElement loginButton2 = driver.findElement(By.xpath("/html/body/div/div/form/div[3]/button"));
-        loginButton2.click();
+    //Submit with button input data.
+        driver.findElement(By.xpath("/html/body/div/div/form/div[3]/button")).click();
         Thread.sleep(5000);
-
-        WebElement showCopiesButton = driver.findElement(By.xpath("/html/body/div/div/div/ul/li/div[2]/a/button"));
-        showCopiesButton.click();
+        driver.findElement(By.xpath("/html/body/div/div/div/ul/li/div[2]/a/button")).click();
         Thread.sleep(5000);
-
-        WebElement showHistoryButton = driver.findElement(By.xpath("/html/body/div/div/div/ul/li/div[2]/a/button"));
-        showHistoryButton.click();
+        driver.findElement(By.xpath("/html/body/div/div/div/ul/li/div[2]/a/button")).click();
         Thread.sleep(5000);
-
-//"customerName" field shouldn't be empty...
-        WebElement rentThisCopyButton1 = driver.findElement(By.xpath("/html/body/div/div/div/button"));
-        rentThisCopyButton1.click();
+    //"customerName" field shouldn't be empty...
+        driver.findElement(By.xpath("/html/body/div/div/div/button")).click();
         Thread.sleep(1000);
-
-        WebElement addCopyButton1 = driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/form/button"));
-        addCopyButton1.click();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/form/button")).click();
         Thread.sleep(5000);
     }
 }
