@@ -1,0 +1,205 @@
+1. Happy path – create user and login 
+Data for test case:
+- Login : “Testing”
+- Password : “12345”
+	*Steps to execute
+	1. Open webpage https://ta-bookrental-fe.onrender.com/login
+	2. Click “sign up” button. Input data for login, password, repeat password, click “signup” button.
+	3. Click on “login”, input data for login and password, click “log in” button.
+
+	*Expected result
+	1. Open eBook  .app webpage
+	2. Create user.
+	3. Log in 
+	
+	*Actual result
+	Same as expected
+
+2. Happy path – Titles catalog
+Data for test case:
+-Login : “Testing”
+-Password : “12345”
+-Book1: 
+	Title : Akademia Pana kleksa
+	Author : Jan brzechwa
+	Year: 1946
+-Book2:
+	Title : Podroze Pana Kleksa
+	Author : Jan brzechwa
+	Year: 1961
+
+	*Steps to execute
+	1. Open webpage https://ta-bookrental-fe.onrender.com/login
+	2. Input login and password data.
+	3. Click add new, input data of Book1, click “Add Title”
+	4. Click add new, input data of Book2, click “Add Title”
+	5. Click “Edit” button of Book2, change year to 1963, click “Edit Title” button
+	6. Click “Remove” on Book2
+	
+	*Expected result
+	1. Open eBook  .app webpage
+	2. Log in
+	3. Add first Book
+	4. Add second Book
+	5. Edit book number 2, change title
+	6. remove book number 2
+
+	*Actual result
+	Same as expected
+
+3. Happy Path – List of copies
+Data for test case:
+-Login : “Testing”
+-Password : “12345”
+
+	*Steps to execute
+	1. Open webpage https://ta-bookrental-fe.onrender.com/login
+	2. Input Login and Password data.
+	3. Click “show copies” button on Book1
+	4. Click “add new” button then click “add copy” button
+	5. Click “add new” button then click “add copy” button
+	6. Click “edit” button and change date from calendar.
+	7. Click “remove” button on second copy
+	8. Click “show history” on first copy.
+
+	*Expected result
+	1. Open eBook  .app webpage
+	2. Log in
+	3. Click “show copies” on Book1
+	4.Add the first copy of Book
+	5. Add the second copy of Book 
+	6. Edit the second copy of Book, change date of purchase
+	7. Remove the second copy of Book
+	8. Enter to history of copy 1
+
+	*Actual result
+	Same as expected
+
+4. Happy path – rents history
+Data for test case:
+-Login : “Testing”
+-Password : “12345”
+-Customer name1: Lukasz
+-Customer name2: Andrzej
+
+	*Steps to execute
+	1. Open webpage https://ta-bookrental-fe.onrender.com/login
+	2. Input Login and Password data.
+	3. Click “show copies” button on Book1
+	4. Click “show history” button on first copy.
+	5. Click “rent this copy” button, input  customer name1 data, then click “add copy”
+	6. Click “remove” button on Customer 1
+	7. Click “rent this copy” button, input  customer name2 data, then click “add copy”
+	8. Click “edit” button on Customer2, change “expiration date” in calendar.
+
+	*Expected result
+	1. Open eBook  .app webpage
+	2. Log in
+	3. Show copies on Book1
+	4. Show rental history of the first copy
+	5. First rental of the first copy
+	6. Return copy of the book
+	7. Another rental of the first copy 
+	8. Edit rental expiration date
+
+	*Actual result
+	Same as expected
+
+5.  Unhappy path - create user and login
+Data for test case:
+-Login1: “Andrzej”
+-Password1: “qwerty”
+-Login2: “Testing”
+-Password2: “qwerty”
+
+	*Steps to execute
+	1. Open webpage https://ta-bookrental-fe.onrender.com/login
+	2. Click “sign up” button , input login data, click “sign up” button.
+	3. Input password data, click “sign up” button.
+	4. Click “log in” button
+	5. Input “login1” and “password1” data, click “log in”
+	5.Input “login2” and “password2” data,  click “log in” button.
+
+	*Expected result
+	1. Open eBook  .app webpage
+	2. show message “You can't leave fields empty“. When input only login1  data while creating user.
+	3. show message “You can't leave fields empty“. When input password1 data without repeating password while creating user.
+	4. Show message “Login failed”.
+	5. Show message “Login failed”.
+
+	*Actual result
+	Same as expected
+
+6.  
+Data for test case:
+-Login : “Testing”
+-Password : “12345”
+-Book:
+	Title : Podroze Pana Kleksa
+	Author : Jan brzechwa
+
+	*Steps to execute
+	1. Open webpage https://ta-bookrental-fe.onrender.com/login
+	2. Input Login and Password data.
+	3. Click “remove” on Book1, shows message “You can’t remove titles with copies!”
+	4. Click “add new” and click “add tittle”.
+	5.Input “Podroze Pana Kleksa” in title field, click “add tittle”. 
+	6. Input “Jan Brzechwa” in author field, click “add title”. Shows message “year field shouldn’t be empty…”
+	7. Return to titles catalog
+
+	*Expected result
+	1. Open eBook  .app webpage
+	2. Log in
+	3. Shows message “You can’t remove titles with copies!” when try to remove a book. 
+	4. Shows message “title field shouldn’t be empty…”
+	5. Shows message “author field shouldn’t be empty…”.
+	6. Shows message “year field shouldn’t be empty…”
+	7. Return to titles catalog
+
+	*Actual result
+	Same as expected
+
+7.  Unhappy Path – list of copies
+Data for test case:
+-Login : “Testing”
+-Password : “12345”
+
+	*Steps to execute
+	1. Open webpage https://ta-bookrental-fe.onrender.com/login
+	2. Input Login and Password data.
+	3. Click “show copies” button on Book1
+	4. Click “remove” button on first copy.
+
+	*Expected result
+	1. Open eBook  .app webpage
+	2. Log in
+	3. Show copies on Book1
+	4. Try to remove copy of Book 1, shows message “ You can’t remove copy with the rent’s history”
+
+	*Actual result
+	Same as expected
+
+8.  Unhappy path – rents history
+Data for test case:
+-Login : “Testing”
+-Password : “12345”
+
+	*Steps to execute
+	1. Open webpage https://ta-bookrental-fe.onrender.com/login
+	2. Input Login and Password data.
+	3. Click “show copies” button on Book1
+	4. Click “show history” button on first copy.
+	5. Click “rent this copy” and then click “add copy”
+
+	*Expected result
+	1. Open eBook  .app webpage
+	2. Log in
+	3. Show copies on Book1
+	4. Show rental history of the first copy
+	5. Shows message “customerName field shouldn’t be empty…”
+
+	*Actual result
+	Same as expected
+
+
+	
