@@ -1,0 +1,82 @@
+Prepare environment for test:
+- create MySQL database with appropriate tables(configuration included in external file)
+- launch program in IntelliJ, JAVA code already created and connection to database configured. Make sure it's running.
+- launch Postman API and prepare new collection.
+
+1. User - endpoint
+*Necceseary data:
+-login
+-password
+
+*Test description
+	Create user with login and password, then use created user data to log in. Test it as a happy path and unhappy. 
+In this endpoint only POST request is available.
+
+*Steps:
+- write tests to cover all possible cases
+- save all requests in collection with happy and unhappy annotation
+
+*Expected result
+- possible to create user and log in into library eBook app
+
+2. Titles - endpoint
+*Necceseary data:
+- userId
+- id
+- author
+- title
+- year
+
+*Test description
+	Check functionality of GET, POST, PUT, DELETE requests.
+
+*Steps
+- write tests to cover all possible cases
+- save all requests in collection with happy and unhappy annotation
+
+*Expected result
+- possible to create new books
+- get info about author, title and year
+- edit mentioned above information
+- remove book from database 
+
+3.Rents - endpoint
+*Necceseary data:
+-userId
+-titleId
+-purchaseDate
+-status
+
+*Test description
+	Check functionality of GET, POST, PUT, DELETE requests.
+
+*Steps
+- write tests to cover all possible cases
+- save all requests in collection with happy and unhappy annotation
+
+*Expected result
+- Possibility to change the availability of copies of the book
+- Get info about availability 
+- Edit purchase date of copy
+- Delete copy of the book
+
+4. Rents - endpoint
+*Necceseary data:
+-userId
+-itemId
+-customerName
+-rentDate
+-expirationDate
+
+*Test description
+	Check functionality of GET, POST, PUT, DELETE requests.
+
+*Steps
+- write tests to cover all possible cases
+- save all requests in collection with happy and unhappy annotation
+
+*Expected result
+- Possibility to rent a copy of the book to specific customer
+- Get info about rental of the copy
+- Edit rental information(customer name, rent date, expiration date)
+- Remove rental of the book copy
