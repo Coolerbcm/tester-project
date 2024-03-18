@@ -1,4 +1,4 @@
-package frontend.testing;
+package frontend.badExample;
 
 
 import org.junit.FixMethodOrder;
