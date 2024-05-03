@@ -1,6 +1,7 @@
 package frontend.testing;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,16 +11,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class thirdPageHappy {
+    private WebDriver driver;
+
+    @BeforeEach
+    public void setUp() {
+        driver = WebDriverSetup.setUpWebDriver();
+    }
 
     @Test
     public void addNewEditRemoveCopy() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:\\Windows\\selenium-drivers\\Chrome\\chromedriver.exe");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(chromeOptions);
-        driver.get("https://ta-bookrental-fe.onrender.com/login");
-
-        LoginPage loginPage = new LoginPage(driver);
+        firstPageHappy.LoginPage loginPage = new firstPageHappy.LoginPage(driver);
         loginPage.login("Tester-Luki", "12345");
 
         BookPage bookPage = new BookPage(driver);
@@ -35,20 +36,6 @@ public class thirdPageHappy {
         Assertions.assertFalse(bookPage.isSecondCopyPresent());
 
         driver.quit();
-    }
-
-    public class LoginPage {
-        private WebDriverWait wait;
-
-        public LoginPage(WebDriver driver) {
-            this.wait = new WebDriverWait(driver, 10);
-        }
-
-        public void login(String username, String password) {
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div/div/form/div[1]/label/input"))).sendKeys(username);
-            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div/div/form/div[2]/label/input"))).sendKeys(password);
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/div/form/div[3]/button"))).click();
-        }
     }
 
     public class BookPage {
@@ -106,6 +93,5 @@ public class thirdPageHappy {
             }
             return driver.findElements(By.xpath("/html/body/div/div/div/ul/li[2]/div[1]/div[1]")).size() > 0;
         }
-
     }
 }

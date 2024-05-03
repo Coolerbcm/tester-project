@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,10 +16,7 @@ public class firstPageHappy {
 
     @BeforeEach
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Windows\\selenium-drivers\\Chrome\\chromedriver.exe");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver(chromeOptions);
+        driver = WebDriverSetup.setUpWebDriver();
     }
 
     @AfterEach
@@ -49,12 +44,12 @@ public class firstPageHappy {
         Assertions.assertTrue(loginPage.isFirstPageTitlesCatalogDisplayed());
     }
 
-    public class LoginPage {
-        private WebDriver driver;
+    public static class LoginPage {
+        private static WebDriver driver;
         private By loginInput = By.id("login");
         private By passwordInput = By.id("password");
         private By loginButton = By.id("login-btn");
-        private By registerButton = By.id("register-btn");
+        private static By registerButton = By.id("register-btn");
 
         public LoginPage(WebDriver driver) {
             this.driver = driver;
@@ -82,7 +77,7 @@ public class firstPageHappy {
         }
     }
 
-    public class RegisterPage {
+    public static class RegisterPage {
         private WebDriver driver;
         private By loginInput = By.id("login");
         private By passwordInput = By.id("password");

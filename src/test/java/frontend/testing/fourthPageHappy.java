@@ -1,6 +1,7 @@
 package frontend.testing;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,14 +12,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class fourthPageHappy {
+    private WebDriver driver;
+
+    @BeforeEach
+    public void setUp() {
+        driver = WebDriverSetup.setUpWebDriver();
+    }
+
     @Test
     public void editRentBook() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:\\Windows\\selenium-drivers\\Chrome\\chromedriver.exe");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(chromeOptions);
-
-        LoginPage loginPage = new LoginPage(driver);
+        firstPageHappy.LoginPage loginPage = new firstPageHappy.LoginPage(driver);
         driver.get("https://ta-bookrental-fe.onrender.com/login");
 
         loginPage.login("Tester-Luki", "12345");
@@ -39,20 +42,6 @@ public class fourthPageHappy {
 
         Assertions.assertEquals("(expiration: 2024-03-27)", bookListPage.getEditedBookRent());
         driver.quit();
-    }
-
-    class LoginPage {
-        private WebDriver driver;
-
-        public LoginPage(WebDriver driver) {
-            this.driver = driver;
-        }
-
-        public void login(String username, String password) {
-            driver.findElement(By.xpath("/html/body/div/div/form/div[1]/label/input")).sendKeys(username);
-            driver.findElement(By.xpath("/html/body/div/div/form/div[2]/label/input")).sendKeys(password);
-            driver.findElement(By.xpath("/html/body/div/div/form/div[3]/button")).click();
-        }
     }
 
     class HomePage {

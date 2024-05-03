@@ -13,14 +13,10 @@ public class secondPageUnhappy {
     private static WebDriver driver;
 
     @BeforeAll
-    public static void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Windows\\selenium-drivers\\Chrome\\chromedriver.exe");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver(chromeOptions);
-        driver.get("https://ta-bookrental-fe.onrender.com/login");
-
-        LoginPage loginPage = new LoginPage(driver);
+    public static void setUp() {
+        driver = WebDriverSetup.setUpWebDriver();
+        firstPageHappy.LoginPage loginPage = new firstPageHappy.LoginPage(driver);
+        loginPage.open();
         loginPage.login("Tester-Luki", "12345");
     }
 

@@ -13,16 +13,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class firstPageUnhappy {
-
     private WebDriver driver;
 
     @BeforeEach
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Windows\\selenium-drivers\\Chrome\\chromedriver.exe");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver(chromeOptions);
+        driver = WebDriverSetup.setUpWebDriver();
     }
+
 
     @AfterEach
     public void tearDown() {
@@ -44,7 +41,7 @@ public class firstPageUnhappy {
     }
 
     @Test
-    public void testLoginWithWrongCredentials() throws InterruptedException {
+    public void testLoginWithWrongCredentials() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         loginPage.loginWithWrongCredentials("Andrzej", "qwerty");
@@ -95,6 +92,3 @@ public class firstPageUnhappy {
         }
     }
 }
-
-
-

@@ -1,6 +1,7 @@
 package frontend.testing;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,14 +12,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class secondPageHappy {
+    private WebDriver driver;
+
+    @BeforeEach
+    public void setUp() {
+        driver = WebDriverSetup.setUpWebDriver();
+    }
 
     @Test
-    public void testAddEditRemoveBook() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:\\Windows\\selenium-drivers\\Chrome\\chromedriver.exe");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-allow-origins=*");
-        WebDriver driver = new ChromeDriver(chromeOptions);
-        LoginPage loginPage = new LoginPage(driver);
+    public void testAddEditRemoveBook() {
+        firstPageHappy.LoginPage loginPage = new firstPageHappy.LoginPage(driver);
         loginPage.open();
         loginPage.login("Tester-Luki", "12345");
 
@@ -87,24 +90,6 @@ public class secondPageHappy {
 
         public boolean isBookPresent(String title) {
             return driver.findElements(By.xpath("//li[contains(., '" + title + "')]")).size() > 0;
-        }
-    }
-
-    class LoginPage {
-        private WebDriver driver;
-
-        public LoginPage(WebDriver driver) {
-            this.driver = driver;
-        }
-
-        public void open() {
-            driver.get("https://ta-bookrental-fe.onrender.com/login");
-        }
-
-        public void login(String username, String password) {
-            driver.findElement(By.xpath("/html/body/div/div/form/div[1]/label/input")).sendKeys(username);
-            driver.findElement(By.xpath("/html/body/div/div/form/div[2]/label/input")).sendKeys(password);
-            driver.findElement(By.xpath("/html/body/div/div/form/div[3]/button")).click();
         }
     }
 }

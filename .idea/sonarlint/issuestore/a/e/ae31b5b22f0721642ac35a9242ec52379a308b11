@@ -1,6 +1,0 @@
-
-
-java:S1192#"nDefine a constant instead of duplicating this literal "/html/body/div/div/div/div[2]/div/form/button" 3 times.(‘¼€Ãøÿÿÿÿ8í•÷ìÎ1
-n	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÏìÏıÿÿÿÿ8î•÷ìÎ1
-]
-java:S1128";Remove this unused import 'org.openqa.selenium.WebElement'.(‰ïµ”şÿÿÿÿ8¶“•Ï1
