@@ -1,11 +1,7 @@
 
 Ö
-java:S3577"Rename class "thirdPageHappy" to match the regular expression: '^((Test|IT)[a-zA-Z0-9_]+|[A-Z][a-zA-Z0-9_]*(Test|Tests|TestCase|IT|ITCase))$'(ñ™şüÿÿÿÿ8ş‡å1J$1701137e-d3d5-49ef-894a-4758908edd51
+java:S3577	"Rename class "thirdPageHappy" to match the regular expression: '^((Test|IT)[a-zA-Z0-9_]+|[A-Z][a-zA-Z0-9_]*(Test|Tests|TestCase|IT|ITCase))$'(ñ™şüÿÿÿÿ8Ì…æÓô1J$797137ee-bfed-4b1f-b840-ec32409a5081
 a
-java:S5786"Remove this 'public' modifier.(Ê÷ßÿ8ÿ‡å1J$11fea7a4-9a52-4295-b2aa-017cd5201a81
-f
-java:S5786"Remove this 'public' modifier.(ñ™şüÿÿÿÿ8ÿ‡å1J$63e8af75-76fb-40c3-8e08-46c5544211b0
+java:S5786"Remove this 'public' modifier.(Ê÷ßÿ8Í…æÓô1J$4088e076-b464-4067-bfa2-e6e401579098
 g
-java:S2925"$Remove this use of "Thread.sleep()".(¬Æ„°8Ÿ‡å1J$7f770a15-b690-4023-8b3f-f971660f8700
-g
-java:S2925Z"$Remove this use of "Thread.sleep()".(¯ú™ú8‚Ÿ‡å1J$4ac31846-a6a1-4224-89c8-0762b76e46ce
+java:S2925"$Remove this use of "Thread.sleep()".(¬Æ„°8Ï…æÓô1J$10fba14d-a7d3-406d-9e00-ecc5db790baa
